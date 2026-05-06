@@ -4,6 +4,29 @@
   box-sizing: border-box; /* Ensures padding/borders don't increase element width */
 }
 
+.title {
+  text-align: center;
+  font-size: 5rem;
+}
+
+body {
+  background-color: #dddddd;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 6.25rem;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .grid-container {
   display: flex;
   flex-direction: row;
@@ -11,14 +34,20 @@
   align-items: center;
   flex-wrap: wrap;
   width: 50%;
-  margin: 0 auto;
-  
 }
 
 .grid-container div {
   border: 1px solid black;
-  flex: 0 0 6.25%
+  flex: 0 0 6.25%;
 }
 
-
-
+button {
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  font-size: 16px;
+  box-shadow: 0 0.1rem black;
+  color: black;
+}
