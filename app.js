@@ -1,3 +1,5 @@
+const colors = ["red", "green", "blue", "yellow"];
+
 const container = document.querySelector(".grid-container");
 
 function GenerateGrid() {
@@ -5,7 +7,6 @@ function GenerateGrid() {
     for (let j = 0; j < 16; j++) {
       const cell = document.createElement("div");
       container.appendChild(cell);
-      cell.textContent = `${i},${j}`
     }
   }
 }
@@ -17,7 +18,7 @@ const cells = document.querySelectorAll(".grid-container div");
 
 cells.forEach((cell) => {
   cell.addEventListener("mouseover", (event) =>{
-     cell.style.backgroundColor ="blue";
+     cell.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
   });
 });
 

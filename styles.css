@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #dddddd;
+  background-color: #FFFFFF;
 }
 
 .main {
@@ -19,6 +19,8 @@ body {
   align-items: center;
   margin: 0 auto;
   gap: 6.25rem;
+  padding: 2rem;
+ 
 }
 
 .settings {
@@ -30,23 +32,26 @@ body {
 .grid-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  width: 50%;
+  box-shadow: 12px 12px 8px #aaa;
+  width: 600px;
+ 
 }
 
 .grid-container div {
   border: 1px solid black;
   flex: 0 0 6.25%;
+  aspect-ratio: 1 / 1;
+   
 }
 
 button {
   border-radius: 0.5rem;
+  min-height: 44px;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  padding: 0.5rem 2rem;
+  padding: 0.8rem 4rem;
   font-size: 16px;
   box-shadow: 0 0.1rem black;
   color: black;
