@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  gap: 6.25rem;
+  gap: 7rem;
   padding: 2rem;
  
 }
@@ -26,6 +26,7 @@ body {
 .settings {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -35,6 +36,7 @@ body {
   flex-wrap: wrap;
   box-shadow: 12px 12px 8px #aaa;
   width: 600px;
+  border: 1px solid black;
  
 }
 
@@ -45,14 +47,35 @@ body {
    
 }
 
+
+button, input{
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  
+}
+
 button {
   border-radius: 0.5rem;
   min-height: 44px;
   text-align: center;
-  cursor: pointer;
-  text-decoration: none;
   padding: 0.8rem 4rem;
-  font-size: 16px;
+  text-decoration: none;
   box-shadow: 0 0.1rem black;
   color: black;
+  transform: 0.1s ease-in-out;
+}
+
+button:hover {
+ transform: scale(1.05);
+}
+
+
+.slider-value{
+ margin-bottom: -12px;
+
+}
+
+.spacer{
+ width: 200px;
 }
