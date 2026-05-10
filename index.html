@@ -12,9 +12,10 @@
     </header>
     <main class="main">
       <section class="settings">
-        <button>Rainbow Mode</button>
-        <button>Color Mode</button>
-        <button>Eraser</button>
+        <input type="color" id="brush-color" name="brushColor" value="#000000">
+        <button id="rainbow">Rainbow Mode</button>
+        <button id="color">Color Mode</button>
+        <button id="eraser">Eraser</button>
         <button id="clear">Clear</button>
         <div class="slider-value">1 x 1</div>
         <input
@@ -22,7 +23,7 @@
           class="slider"
           name="size"
           min="1"
-          max="100"
+          max="64"
           value="1"
         />
       </section>
