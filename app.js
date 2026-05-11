@@ -11,6 +11,11 @@ const eraserButton = document.querySelector("#eraser");
 const rainbowButton = document.querySelector("#rainbow");
 const colorButton = document.querySelector("#color");
 
+const colorInput = document.querySelector("#brush-color");
+
+
+
+
 let currentMode = "rainbow";
 
 let x = 16,
@@ -45,6 +50,7 @@ cells.forEach((cell) => {
       cell.style.backgroundColor =
         colors[Math.floor(Math.random() * colors.length)];
     } else if (currentMode === "color") {
+      cell.style.backgroundColor = colorInput.value;
     } else if (currentMode === "eraser") {
       cell.style.backgroundColor = "";
     }
