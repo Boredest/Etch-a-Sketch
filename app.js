@@ -11,10 +11,9 @@ const eraserButton = document.querySelector("#eraser");
 const rainbowButton = document.querySelector("#rainbow");
 const colorButton = document.querySelector("#color");
 
+const buttonList = document.querySelectorAll("button");
+
 const colorInput = document.querySelector("#brush-color");
-
-
-
 
 let currentMode = "rainbow";
 
@@ -38,6 +37,15 @@ function clearGrid() {
 
 function setMode(mode) {
   currentMode = mode;
+}
+
+function setActiveButton(activebutton) {
+  buttonList.forEach((button) => {
+    button.classList.remove("active");
+  });
+
+  activebutton.classList.add("active");
+ 
 }
 
 generateGrid(x, y);
@@ -66,6 +74,17 @@ clearButton.addEventListener("click", () => {
   clearGrid();
 });
 
-eraserButton.addEventListener("click", () => setMode("eraser"));
-rainbowButton.addEventListener("click", () => setMode("rainbow"));
-colorButton.addEventListener("click", () => setMode("color"));
+eraserButton.addEventListener("click", () => {
+  setMode("eraser");
+  setActiveButton(eraserButton);
+});
+
+rainbowButton.addEventListener("click", () => {
+  setMode("rainbow");
+  setActiveButton(rainbowButton);
+});
+
+colorButton.addEventListener("click", () => {
+  setMode("color");
+  setActiveButton(colorButton);
+});
