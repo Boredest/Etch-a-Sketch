@@ -21,15 +21,25 @@ let x = 16,
   y = 16;
 
 function generateGrid(x, y) {
-  for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
+
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  const cellWidth = width / x;
+  const cellHeight = height / y;
+
+  for (let i = 0; i < x; i++) {
+    for (let j = 0; j < y; j++) {
       const cell = document.createElement("div");
+      cell.style.width = cellWidth  + "px";
+      cell.style.height = cellHeight + "px";
       container.appendChild(cell);
     }
   }
 }
 
-function clearGrid() {
+function clearColors() {
+  const cells = document.querySelectorAll(".grid-container div");
   cells.forEach((cell) => {
     cell.style.backgroundColor = "";
   });
@@ -45,33 +55,39 @@ function setActiveButton(activebutton) {
   });
 
   activebutton.classList.add("active");
- 
 }
 
 generateGrid(x, y);
 
-const cells = document.querySelectorAll(".grid-container div");
-
-cells.forEach((cell) => {
-  cell.addEventListener("mouseover", (event) => {
-    if (currentMode === "rainbow") {
-      cell.style.backgroundColor =
-        colors[Math.floor(Math.random() * colors.length)];
-    } else if (currentMode === "color") {
-      cell.style.backgroundColor = colorInput.value;
-    } else if (currentMode === "eraser") {
-      cell.style.backgroundColor = "";
-    }
+function clearGrid() {
+  const cells = document.querySelectorAll(".grid-container div");
+  cells.forEach((cell) => {
+    cell.remove();
   });
+}
+
+container.addEventListener("mouseover", (event) => {
+  let target = event.target;
+  if (!target.matches(".grid-container div")) return;
+  if (currentMode === "rainbow") {
+    target.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+  } else if (currentMode === "color") {
+    target.style.backgroundColor = colorInput.value;
+  } else if (currentMode === "eraser") {
+    target.style.backgroundColor = "";
+  }
 });
 
-slider.addEventListener("input", function () {
+slider.addEventListener("change", function () {
   //displays string not int
   sliderText.textContent = slider.value + " x " + slider.value;
+  clearGrid();
+  generateGrid(slider.value, slider.value);
 });
 
 clearButton.addEventListener("click", () => {
-  clearGrid();
+  clearColors();
 });
 
 eraserButton.addEventListener("click", () => {

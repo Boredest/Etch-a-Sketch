@@ -21,6 +21,7 @@ body {
   margin: 0 auto;
   gap: 7rem;
   padding: 2rem;
+  max-height: 500px;
 }
 
 .settings {
@@ -43,7 +44,6 @@ body {
 
 .grid-container div {
   border: 1px solid black;
-  flex: 0 0 6.25%;
   aspect-ratio: 1 / 1;
 }
 
@@ -116,7 +116,6 @@ button:hover {
   width: 20px;
   background-color: black;
   border-radius: 10px;
- 
 }
 
 .slider-value {
