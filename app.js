@@ -21,7 +21,6 @@ let x = 16,
   y = 16;
 
 function generateGrid(x, y) {
-
   const width = container.clientWidth;
   const height = container.clientHeight;
 
@@ -31,7 +30,7 @@ function generateGrid(x, y) {
   for (let i = 0; i < x; i++) {
     for (let j = 0; j < y; j++) {
       const cell = document.createElement("div");
-      cell.style.width = cellWidth  + "px";
+      cell.style.width = cellWidth + "px";
       cell.style.height = cellHeight + "px";
       container.appendChild(cell);
     }
@@ -58,6 +57,7 @@ function setActiveButton(activebutton) {
 }
 
 generateGrid(x, y);
+setActiveButton(rainbowButton);
 
 function clearGrid() {
   const cells = document.querySelectorAll(".grid-container div");

@@ -21,7 +21,6 @@ body {
   margin: 0 auto;
   gap: 7rem;
   padding: 2rem;
-  max-height: 500px;
 }
 
 .settings {
@@ -56,9 +55,14 @@ input {
 
 #brush-color {
   appearance: none;
-  border: none;
-  height: 100px;
-  width: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+#brush-color:hover{
+  transform: scale(1.05);
 }
 
 button {
@@ -116,6 +120,7 @@ button:hover {
   width: 20px;
   background-color: black;
   border-radius: 10px;
+ 
 }
 
 .slider-value {
