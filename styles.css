@@ -12,6 +12,9 @@
 
 body {
   background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main {
@@ -129,4 +132,22 @@ button:hover {
 
 .spacer {
   width: 200px;
+}
+
+.footer{
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  padding: 0.5rem;
+  gap: 10px;
+}
+
+.github-logo{
+  display: block;
+    max-width: 28px;
+    max-height: 28px;
+    transition: transform 0.3s ease-in-out;
 }
