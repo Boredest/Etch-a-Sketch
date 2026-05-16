@@ -66,9 +66,7 @@ function clearGrid() {
   });
 }
 
-container.addEventListener("mouseover", (event) => {
-  let target = event.target;
-  if (!target.matches(".grid-container div")) return;
+function colorCell(target) {
   if (currentMode === "rainbow") {
     target.style.backgroundColor =
       colors[Math.floor(Math.random() * colors.length)];
@@ -77,6 +75,23 @@ container.addEventListener("mouseover", (event) => {
   } else if (currentMode === "eraser") {
     target.style.backgroundColor = "";
   }
+}
+
+container.addEventListener("mouseover", (event) => {
+  let target = event.target;
+
+  if (!target.matches(".grid-container div")) return;
+  if (event.buttons === 1) {
+    colorCell(target);
+  }
+});
+
+container.addEventListener("mousedown", (event) => {
+  let target = event.target;
+
+  if (!target.matches(".grid-container div")) return;
+
+  colorCell(target);
 });
 
 slider.addEventListener("change", function () {
