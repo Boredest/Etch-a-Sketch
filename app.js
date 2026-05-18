@@ -21,17 +21,11 @@ let x = 16,
   y = 16;
 
 function generateGrid(x, y) {
-  const width = container.clientWidth;
-  const height = container.clientHeight;
-
-  const cellWidth = width / x;
-  const cellHeight = height / y;
-
   for (let i = 0; i < x; i++) {
     for (let j = 0; j < y; j++) {
       const cell = document.createElement("div");
-      cell.style.width = cellWidth + "px";
-      cell.style.height = cellHeight + "px";
+      cell.style.width = `${100 / x}%`;
+      cell.style.height = `${100 / y}%`;
       container.appendChild(cell);
     }
   }
